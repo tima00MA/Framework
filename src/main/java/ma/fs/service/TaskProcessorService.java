@@ -1,12 +1,13 @@
 package ma.fs.service;
 
 import ma.fs.annotations.Component;
+import ma.fs.annotations.Inject;
 
 
 @Component(id = "taskProcessorService")
 public class TaskProcessorService {
     private TaskExecutorService taskExecutorService;
-
+    @Inject
     public TaskProcessorService() {}
 
     // Constructor-based injection to initialize the taskExecutorService dependency

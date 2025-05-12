@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="taskExecutorService" class="ma.fs.service.TaskExecutorService"/>
+
+    <bean id="taskHandlerService" class="ma.fs.service.TaskHandlerService">
+        <property name="taskExecutorService" ref="taskExecutorService"/>
+    </bean>
+
+    <bean id="taskProcessorService" class="ma.fs.service.TaskProcessorService">
+        <property name="taskHandlerService" ref="taskHandlerService"/>
+    </bean>
+</beans>
